@@ -3,8 +3,6 @@ import json
 import time
 import pyttsx3 
 
-API_KEY = "Insert your API Key here"
-
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices') 
 engine.setProperty('voice', voices[1].id) # for particular voice
@@ -14,6 +12,8 @@ engine.setProperty('volume', 1.0) # sets the volume
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
+    
+API_KEY = input("Enter your News API Key : ") # Go to 'https://newsapi.org/' and sign up for the API Key and then input it here. 
 
 name = input("Enter Your name? ")
 speak(f"Hi {name}, Welcome to News feed. We have news for the following countries. Enter the country code you want to see the news for.")
